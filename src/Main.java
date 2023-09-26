@@ -15,6 +15,7 @@ public class Main {
         double divisio = primer / segon;
 
 // Exercici 1: Mostra els resultats dels càlculs
+        System.out.println("Exercici 1");
         System.out.println("La suma de " + primer + " i " + segon + " és igual a " + suma);
         System.out.println("La resta de " + primer + " i " + segon + " és igual a " + resta);
         System.out.println("La multiplicació de " + primer + " i " + segon + " és igual a " + multiplicacio);
@@ -25,6 +26,8 @@ public class Main {
 // Exercici 2: Mitjana nota alumnes
         // Scanner
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Exercici 2");
 
         // Nom
         System.out.print("Introdueix el nom de l'alumne: ");
@@ -44,9 +47,35 @@ public class Main {
         double mitjana = (nota1 + nota2 + nota3) / 3;
         System.out.println("La mitjana de l'alumne " + nomAlumne + " és: " + mitjana);
 
-        scanner.close();
         System.out.println();
 
+
 // Exercici 3: Sou treballador
+        // Scanner
+        Scanner scanner2 = new Scanner(System.in);
+
+        System.out.println("Exercici 3");
+
+        // Nom
+        System.out.print("Introdueix el nom del treballador: ");
+        String nomTreballador = scanner2.nextLine();
+
+        // Hores
+        System.out.print("Introdueix les hores que fa feina al dia el treballador: ");
+        double hores = Double.parseDouble(scanner2.nextLine());
+
+        // Dies
+        System.out.print("Introdueix els dies que fa feina al mes el treballador: ");
+        double dies = Double.parseDouble(scanner2.nextLine());
+
+        // Salari per hora
+        System.out.print("Introdueix quant cobra per hora treballada el treballador: ");
+        double salariHora = Double.parseDouble(scanner2.nextLine());
+
+        //Salari mensual
+        double salari = (hores * salariHora * dies);
+        System.out.println("El salari del treballador " + nomTreballador + " és: " + salari);
+
+        System.out.println();
     }
 }
