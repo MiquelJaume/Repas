@@ -1,9 +1,14 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
+
+// Exercici 1:
         // Declaració i inicialització de les variables
         double primer = 7;
         double segon = 3;
@@ -14,7 +19,7 @@ public class Main {
         double multiplicacio = primer * segon;
         double divisio = primer / segon;
 
-// Exercici 1: Mostra els resultats dels càlculs
+//Mostrar els resultats dels càlculs
         System.out.println("Exercici 1");
         System.out.println("La suma de " + primer + " i " + segon + " és igual a " + suma);
         System.out.println("La resta de " + primer + " i " + segon + " és igual a " + resta);
@@ -77,5 +82,39 @@ public class Main {
         System.out.println("El salari del treballador " + nomTreballador + " és: " + salari);
 
         System.out.println();
+
+
+// Exercici 4:
+        try {
+            InputStreamReader inputStreamReader = new InputStreamReader(System.in);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+            System.out.print("Introdueix una cadena (String): ");
+            String cadena = bufferedReader.readLine();
+            System.out.println("Has introduït: " + cadena);
+
+            System.out.print("Introdueix un enter: ");
+            int enter = Integer.parseInt(bufferedReader.readLine());
+            System.out.println("Has introduït: " + enter);
+
+            System.out.print("Introdueix un decimal (float): ");
+            float decimal = Float.parseFloat(bufferedReader.readLine());
+            System.out.println("Has introduït: " + decimal);
+
+            System.out.print("Introdueix un decimal (double): ");
+            double decimalDouble = Double.parseDouble(bufferedReader.readLine());
+            System.out.println("Has introduït: " + decimalDouble);
+
+            bufferedReader.close();
+            inputStreamReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (NumberFormatException e) {
+            System.out.println("Format incorrecte!");
+        }
+
+
+// Exercici 5:
+
     }
 }
