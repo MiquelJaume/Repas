@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -85,6 +83,7 @@ public class Main {
 
 
 // Exercici 4:
+        System.out.println("Exercici 4");
         try {
             InputStreamReader inputStreamReader = new InputStreamReader(System.in);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -112,9 +111,52 @@ public class Main {
         } catch (NumberFormatException e) {
             System.out.println("Format incorrecte!");
         }
+        System.out.println();
 
 
 // Exercici 5:
+        System.out.println("Exercici 5");
+        llegirFitxer("fitxer.txt");
+        escriureFitxer("fitxer.txt", "Prova agregar nou text a continuació del que hi ha al fitxer.");
+    }
 
+    public static void llegirFitxer(String nomFitxer) {
+        try {
+            // Construïm la ruta completa utilitzant el directori on es troba el fitxer
+            String rutaFitxer = "C:\\GS2\\Serveis\\Repas\\src\\" + nomFitxer;
+            File fitxer = new File(rutaFitxer);
+
+            FileReader fileReader = new FileReader(fitxer);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String linia;
+            while ((linia = bufferedReader.readLine()) != null) {
+                System.out.println(linia);
+            }
+
+            bufferedReader.close();
+            fileReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void escriureFitxer(String nomFitxer, String text) {
+        try {
+            // Construïm la ruta completa utilitzant el directori on es troba el fitxer
+            String rutaFitxer = "C:\\GS2\\Serveis\\Repas\\src\\" + nomFitxer;
+            File fitxer = new File(rutaFitxer);
+
+            FileWriter fileWriter = new FileWriter(fitxer, true); // El segon argument "true" indica que s'afegirà al final del fitxer
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+            bufferedWriter.write(text); // Escrivim el text al fitxer
+            bufferedWriter.newLine(); // Afegim una nova línia per separar continguts si és necessari
+
+            bufferedWriter.close();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
